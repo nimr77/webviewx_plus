@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <H2> This html code is loaded from assets, Redirecting...</H2>
+
+
+        <script> function detectRedirectAndNotifyParent() 
+        {
+
+        
+            window.postMessage(window.location.href, '*');
+            console.log(`[INFO] redirect message sent to parent ${window.location.href} `) 
+    
+        
+        } 
+        
+        window.addEventListener('beforeunload', detectRedirectAndNotifyParent);
+        
+        </script>
+  
+        <script>
+            // Function to redirect the user to the Flutter home page
+            function redirectToFlutterHomePage() {
+                // Replace "https://your-flutter-web-app-url.com" with the actual URL of your Flutter web app's home page
+                window.location.href = 'https://flutter.dev';
+            }
+
+            // Redirect after 3 seconds
+            setTimeout(redirectToFlutterHomePage, 3000);
+        </script>
+    </body>
+</html>
